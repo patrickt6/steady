@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="steady">
+  <rect width="512" height="512" rx="112" fill="#12100e" />
+  <!--
+    A carrier wave under an amplitude envelope. The envelope is the point:
+    steady works by modulating the amplitude of a music bed, so the icon
+    shows the envelope rather than a plain sine.
+  -->
+  <path
+    d="M40 256 C 96 176, 152 176, 208 256 S 320 336, 376 256 S 456 176, 472 256"
+    fill="none"
+    stroke="#e8e2d9"
+    stroke-opacity="0.35"
+    stroke-width="14"
+    stroke-linecap="round"
+  />
+  <path
+    d="M40 256 C 68 216, 96 216, 124 256 S 180 296, 208 256 S 264 200, 292 256 S 348 312, 376 256 S 444 216, 472 256"
+    fill="none"
+    stroke="#e8e2d9"
+    stroke-width="22"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

@@ -1,0 +1,369 @@
+/*
+ * Plain on purpose. Someone opening this is about to try to concentrate, and a
+ * page that wants to be looked at is working against them. Two colours, one
+ * typeface, one accent, generous spacing, almost no motion.
+ */
+
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --border: #ded8cf;
+  --text: #201d19;
+  --muted: #5d574e;
+  --accent: #3c5a4a;
+  --accent-text: #ffffff;
+  --focus: #1d4ed8;
+  --radius: 10px;
+  --gap: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12100e;
+    --surface: #1b1815;
+    --border: #322d27;
+    --text: #ece7e0;
+    --muted: #a49c91;
+    --accent: #7fae96;
+    --accent-text: #10201a;
+    --focus: #93b7ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    16px/1.6 ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+main {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+a {
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  z-index: 10;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.masthead {
+  margin-bottom: 2.5rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* Player */
+
+.player {
+  text-align: center;
+}
+
+.play {
+  width: 100%;
+  max-width: 18rem;
+  padding: 1.5rem;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.play:hover {
+  opacity: 0.9;
+}
+
+.play[aria-pressed='true'] {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.85rem;
+  min-height: 1.5rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.field.volume {
+  max-width: 100%;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.5rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  text-align: left;
+}
+
+.countdown {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  margin: 0 0 0.4rem;
+}
+
+/* Presets */
+
+.preset-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.preset {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.preset[aria-checked='true'] {
+  border-color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.preset .name {
+  display: block;
+  font-weight: 600;
+}
+
+.preset .blurb {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* Disclosures */
+
+.disclosure {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin-bottom: 0.75rem;
+}
+
+.disclosure > summary {
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.secondary {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.9rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.secondary[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.result {
+  font-weight: 600;
+}
+
+.panel {
+  padding: 0 1rem 1rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.group {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.group .toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.group .controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-left: 2px solid var(--border);
+  padding-left: 0.6rem;
+  margin: 0 0 0.6rem;
+}
+
+.bands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.band {
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.6rem;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.disclaimer {
+  border-left: 2px solid var(--border);
+  padding-left: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

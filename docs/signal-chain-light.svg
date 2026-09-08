@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 670" role="img" aria-label="The steady signal chain">
+  <rect x="0" y="0" width="900" height="670" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B959E"/></marker>
+  </defs>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <rect x="60" y="40" width="420" height="150" rx="10" fill="#F2F5F7" stroke="#CBD2D9" stroke-width="1.5"/>
+    <text x="84" y="76" font-size="20" font-weight="600" fill="#1F252B">Music bed</text>
+    <text x="84" y="110" font-size="15" fill="#4A555F">Bass drone</text>
+    <text x="84" y="136" font-size="15" fill="#4A555F">Pad</text>
+    <text x="84" y="162" font-size="15" fill="#4A555F">Notes</text>
+    <rect x="520" y="40" width="320" height="150" rx="10" fill="#F2F5F7" stroke="#CBD2D9" stroke-width="1.5"/>
+    <text x="544" y="76" font-size="20" font-weight="600" fill="#1F252B">Noise layer</text>
+    <text x="544" y="110" font-size="15" fill="#4A555F">white, pink or brown</text>
+    <text x="544" y="136" font-size="15" fill="#4A555F">skips the modulation stage</text>
+    <rect x="60" y="220" width="420" height="230" rx="14" fill="#FFFFFF" stroke="#2F6690" stroke-width="2.5"/>
+    <text x="84" y="256" font-size="20" font-weight="600" fill="#1F252B">Modulation stage</text>
+    <text x="84" y="280" font-size="14" fill="#4A555F">The crossover splits the music bed at 300 Hz</text>
+    <rect x="84" y="300" width="372" height="60" rx="8" fill="#E4EFF6" stroke="#2F6690" stroke-width="1"/>
+    <rect x="84" y="300" width="5" height="60" rx="2.5" fill="#2F6690"/>
+    <text x="104" y="325" font-size="15" font-weight="600" fill="#1F252B">Below 300 Hz</text>
+    <text x="104" y="346" font-size="14" fill="#4A555F">passes through, not modulated</text>
+    <line x1="356" y1="322.0" x2="356" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="362" y1="322.0" x2="362" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="368" y1="322.0" x2="368" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="374" y1="322.0" x2="374" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="380" y1="322.0" x2="380" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="386" y1="322.0" x2="386" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="392" y1="322.0" x2="392" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="398" y1="322.0" x2="398" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="404" y1="322.0" x2="404" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="410" y1="322.0" x2="410" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="416" y1="322.0" x2="416" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="422" y1="322.0" x2="422" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="428" y1="322.0" x2="428" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="434" y1="322.0" x2="434" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="440" y1="322.0" x2="440" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <line x1="446" y1="322.0" x2="446" y2="338.0" stroke="#2F6690" stroke-width="2" stroke-linecap="round"/>
+    <rect x="84" y="372" width="372" height="60" rx="8" fill="#FAEDDF" stroke="#B0601C" stroke-width="1"/>
+    <rect x="84" y="372" width="5" height="60" rx="2.5" fill="#B0601C"/>
+    <text x="104" y="397" font-size="15" font-weight="600" fill="#1F252B">Above 300 Hz</text>
+    <text x="104" y="418" font-size="14" fill="#4A555F">amplitude modulation at 16 Hz</text>
+    <line x1="356" y1="389.0" x2="356" y2="415.0" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="362" y1="392.1" x2="362" y2="411.9" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="368" y1="397.5" x2="368" y2="406.5" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="374" y1="398.6" x2="374" y2="405.4" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="380" y1="394.0" x2="380" y2="410.0" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="386" y1="389.4" x2="386" y2="414.6" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="392" y1="390.5" x2="392" y2="413.5" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="398" y1="395.9" x2="398" y2="408.1" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="404" y1="399.0" x2="404" y2="405.0" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="410" y1="395.9" x2="410" y2="408.1" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="416" y1="390.5" x2="416" y2="413.5" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="422" y1="389.4" x2="422" y2="414.6" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="428" y1="394.0" x2="428" y2="410.0" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="434" y1="398.6" x2="434" y2="405.4" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="440" y1="397.5" x2="440" y2="406.5" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <line x1="446" y1="392.1" x2="446" y2="411.9" stroke="#B0601C" stroke-width="2" stroke-linecap="round"/>
+    <rect x="60" y="490" width="780" height="76" rx="10" fill="#F2F5F7" stroke="#CBD2D9" stroke-width="1.5"/>
+    <text x="84" y="522" font-size="20" font-weight="600" fill="#1F252B">Master gain and limiter</text>
+    <text x="84" y="548" font-size="14" fill="#4A555F">gain capped at 0.7, then a limiter at -6 dB, ratio 20</text>
+    <rect x="390" y="606" width="120" height="44" rx="22" fill="#E9EDF0" stroke="#CBD2D9" stroke-width="1.5"/>
+    <text x="450" y="634" font-size="17" font-weight="600" text-anchor="middle" fill="#1F252B">Output</text>
+    <line x1="270" y1="190" x2="270" y2="216" stroke="#8B959E" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="270" y1="450" x2="270" y2="486" stroke="#8B959E" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="450" y1="566" x2="450" y2="602" stroke="#8B959E" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="680" y1="190" x2="680" y2="486" stroke="#8B959E" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+  </g>
+</svg>
