@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>steady</title>
+    <meta
+      name="description"
+      content="Continuous focus audio that runs entirely in your browser. Open source, no account, no install."
+    />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to player</a>
+
+    <main id="main">
+      <header class="masthead">
+        <h1>steady</h1>
+        <p class="tagline">Sound that stays the same, so you do not have to notice it.</p>
+      </header>
+
+      <section class="player" aria-labelledby="player-heading">
+        <h2 id="player-heading" class="sr-only">Player</h2>
+
+        <div id="orb-host" class="orb-host"></div>
+
+        <button id="play" class="btn btn-primary btn-play" type="button" aria-pressed="false">
+          <span id="play-label">Play</span>
+        </button>
+
+        <p id="status" class="status" role="status" aria-live="polite">Ready</p>
+
+        <div class="row">
+          <label class="field volume" for="master">
+            <span>Volume</span>
+            <input
+              id="master"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.6"
+              aria-describedby="master-hint"
+            />
+          </label>
+        </div>
+        <p id="master-hint" class="hint">
+          Pick the level that feels right to you. Output is capped so it cannot get painfully loud.
+        </p>
+      </section>
+
+      <section class="presets" aria-labelledby="presets-heading">
+        <h2 id="presets-heading">Presets</h2>
+        <div
+          id="preset-list"
+          class="preset-list"
+          role="radiogroup"
+          aria-labelledby="presets-heading"
+        ></div>
+        <p id="preset-blurb" class="preset-blurb" aria-live="polite"></p>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Runs entirely on your device. Nothing is sent anywhere and there is nothing to sign up
+          for.
+        </p>
+        <p class="disclaimer">
+          Not a medical device and not a treatment. The research behind this is modest, mixed, and
+          summarised honestly in the README, including the parts that argue against it. If attention
+          is causing real problems in your life, talk to a clinician.
+        </p>
+        <p><a href="https://github.com/patrickt6/steady">Source code and the research notes</a></p>
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

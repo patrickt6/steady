@@ -1,0 +1,320 @@
+/*
+ * Plain on purpose. Someone opening this is about to try to concentrate, and a
+ * page that wants to be looked at is working against them. The page is now
+ * just the orb, the play button, the four presets, and volume, styled with
+ * the warm stone palette and pill buttons from the shared design system.
+ */
+
+:root {
+  --gray-25: #fdfcfc;
+  --gray-50: #faf8f8;
+  --gray-100: #f5f3f1;
+  --gray-200: #ebe8e4;
+  --gray-300: #d7d2cc;
+  --gray-400: #a59f97;
+  --gray-500: #777169;
+  --gray-600: #59544f;
+  --gray-700: #44403b;
+  --gray-800: #292524;
+  --gray-900: #1c1917;
+  --black: #000000;
+  --white: #ffffff;
+  --focus: #2b7fff;
+
+  --bg: var(--gray-50);
+  --surface: var(--white);
+  --border: var(--gray-200);
+  --text: var(--gray-900);
+  --muted: var(--gray-500);
+
+  --radius-pill: 9999px;
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --gap: 1.25rem;
+}
+
+/* Button fills as tokens, so the dark scheme can invert them. */
+:root {
+  --btn-primary-bg: var(--black);
+  --btn-primary-fg: var(--white);
+  --btn-primary-hover: var(--gray-700);
+  --btn-secondary-bg: var(--white);
+  --btn-secondary-fg: var(--black);
+  --btn-secondary-hover: var(--gray-25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: var(--gray-900);
+    --surface: var(--gray-800);
+    --border: var(--gray-700);
+    --text: var(--gray-100);
+    --muted: var(--gray-400);
+    /* The primary fill inverts in the dark scheme. A black pill on a near
+       black page is close to invisible, so emphasis goes to a light fill with
+       dark text instead. */
+    --btn-primary-bg: var(--gray-100);
+    --btn-primary-fg: var(--gray-900);
+    --btn-primary-hover: var(--white);
+    --btn-secondary-bg: var(--gray-800);
+    --btn-secondary-fg: var(--gray-100);
+    --btn-secondary-hover: var(--gray-700);
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: var(--gray-900);
+  --surface: var(--gray-800);
+  --border: var(--gray-700);
+  --text: var(--gray-100);
+  --muted: var(--gray-400);
+  --btn-primary-bg: var(--gray-100);
+  --btn-primary-fg: var(--gray-900);
+  --btn-primary-hover: var(--white);
+  --btn-secondary-bg: var(--gray-800);
+  --btn-secondary-fg: var(--gray-100);
+  --btn-secondary-hover: var(--gray-700);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font:
+    16px/1.6 ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+main {
+  max-width: 26rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+a {
+  color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* Player */
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orb-host {
+  margin-bottom: 2rem;
+}
+
+/* Pill buttons, matching the design system's btn-primary / btn-secondary. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  border-radius: var(--radius-pill);
+  outline: none;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform 100ms var(--ease-out);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-fg);
+}
+
+.btn-primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-fg);
+  box-shadow:
+    0 0 1px rgba(0, 0, 0, 0.4),
+    0 1px 1px rgba(0, 0, 0, 0.04),
+    0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.btn-secondary:hover {
+  background: var(--btn-secondary-hover);
+}
+
+.btn-play {
+  width: 100%;
+  max-width: 14rem;
+  padding: 1.1rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.85rem;
+  min-height: 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--black);
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+  text-align: left;
+}
+
+/* Presets */
+
+.preset-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.preset-blurb {
+  margin: 0.9rem auto 0;
+  max-width: 22rem;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: left;
+}
+
+.disclaimer {
+  border-left: 2px solid var(--border);
+  padding-left: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
