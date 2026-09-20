@@ -34,5 +34,18 @@ export default tseslint.config(
       },
     },
   },
+  {
+    // The measurement rig is a Node script that drives a headless browser, so
+    // it needs both global scopes: Node for the process that runs the sweep,
+    // and browser for the callbacks that are evaluated inside the page. It
+    // prints its results to stdout, so console is allowed here.
+    files: ['tools/**/*.{js,mjs,ts}'],
+    languageOptions: {
+      globals: { ...globals.node, ...globals.browser },
+    },
+    rules: {
+      'no-console': 'off',
+    },
+  },
   prettier,
 );
