@@ -27,15 +27,15 @@ change to `src/`.
 
 ## Columns
 
-| Column | Meaning |
-| --- | --- |
-| `flux_*` | Spectral flux, frame to frame spectral change. Spikes are new events. |
-| `onset_per_min`, `ioi_*` | Event rate, and the entropy and variability of the gaps between events. |
-| `lufs_integrated`, `loudness_range`, `loudness_sd` | ITU-R BS.1770 loudness. `loudness_range` is the broadcast LRA measure. |
-| `centroid_*`, `flatness_mean`, `rms_mean` | Timbre and level. |
-| `adf_*_p` | Augmented Dickey-Fuller test on RMS and spectral centroid. A low p supports "nothing drifted over the session". |
-| `self_similarity` | Mean of the MFCC recurrence matrix. High means the piece keeps returning to the same state. |
-| `env_peak_hz`, `env_peak_share`, `rate_verified` | Dominant frequency of the amplitude envelope. This is the verification column: it checks the modulation is at the rate the settings asked for. |
+| Column                                             | Meaning                                                                                                                                        |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `flux_*`                                           | Spectral flux, frame to frame spectral change. Spikes are new events.                                                                          |
+| `onset_per_min`, `ioi_*`                           | Event rate, and the entropy and variability of the gaps between events.                                                                        |
+| `lufs_integrated`, `loudness_range`, `loudness_sd` | ITU-R BS.1770 loudness. `loudness_range` is the broadcast LRA measure.                                                                         |
+| `centroid_*`, `flatness_mean`, `rms_mean`          | Timbre and level.                                                                                                                              |
+| `adf_*_p`                                          | Augmented Dickey-Fuller test on RMS and spectral centroid. A low p supports "nothing drifted over the session".                                |
+| `self_similarity`                                  | Mean of the MFCC recurrence matrix. High means the piece keeps returning to the same state.                                                    |
+| `env_peak_hz`, `env_peak_share`, `rate_verified`   | Dominant frequency of the amplitude envelope. This is the verification column: it checks the modulation is at the rate the settings asked for. |
 
 ## What this does not measure
 
