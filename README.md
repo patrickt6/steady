@@ -1,4 +1,13 @@
-# steady
+<p align="center">
+  <img src="docs/banner.png" alt="steady: plain instrumental music, with its volume changed about 16 times a second. It runs in your browser. No account, no install, no upload." width="800">
+</p>
+
+<p align="center">
+  <img src="docs/how-it-works.png" alt="How steady makes sound: a music bed of drone, pad and single notes, amplitude modulation at 16 Hz above 300 Hz, an optional white, pink or brown noise layer, and a limiter that caps the output level" width="800">
+</p>
+
+[![CI](https://github.com/patrickt6/steady/actions/workflows/ci.yml/badge.svg)](https://github.com/patrickt6/steady/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 steady plays plain instrumental music. The app changes the volume of that music about 16 times a second. Engineers call this effect amplitude modulation. Researchers added the same effect to music and measured better sustained attention. The benefit was larger in people who reported more ADHD symptoms. The effect is small and the evidence is early. [What the research says](#what-the-research-says) gives the studies and their limits.
 
